@@ -22,8 +22,6 @@ export default function Sheet({player}) {
       return 6
     else if (xp<34000)
       return 7
-    else 
-      return "7+"
   }
 
   return (
@@ -45,15 +43,14 @@ export default function Sheet({player}) {
         <button onClick={()=>{setXp(xp=> xp+300)}}>Add Xp</button>
       </div>
       <div className="sheet__column">
-      <button onClick={()=>{setMana(mana=> mana+5)}}>Add Mana</button>
-      <button onClick={()=>{setHealth(health=> health+5)}}>Add Health</button>
+        <button onClick={()=>{setMana(mana=> mana+5)}}>Add Mana</button>
+        <button onClick={()=>{setHealth(health=> health+5)}}>Add Health</button>
       </div>
       <div className="sheet__column">
-      <button onClick={()=>{setMana(mana=> mana-5)}}>Remove Mana</button>
-      <button onClick={()=>{setHealth(health=> health-5)}}>Remove Health</button>
+        <button onClick={()=>{setMana(mana=> mana-5)}}>Remove Mana</button>
+        <button onClick={()=>{setHealth(health=> health-5)}}>Remove Health</button>
       </div>
     </div>
     </>
-    
   )
 }
