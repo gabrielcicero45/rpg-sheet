@@ -1,0 +1,11 @@
+.sheet__item--rpg-class{
+  text-align: center;
+  padding: 10px;
+}
+
+.sheet__item--icon{
+  display: flex;
+  border-radius: 8px;
+  margin: 8px;
+  height: 72px;
+}

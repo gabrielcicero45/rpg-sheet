@@ -8,7 +8,7 @@ export default function Attributes({attributes}) {
       <div className="sheet__item">Dexterity: {dexterity}</div>
       <div className="sheet__item">Agility: {agility}</div>
       <div className="sheet__item">Intelligency: {intelligency}</div>
-      <div className="sheet__item">Wisdom:{wisdom}</div>
+      <div className="sheet__item">Wisdom: {wisdom}</div>
       <div className="sheet__item">Charisma: {charisma}</div>
     </>
   )

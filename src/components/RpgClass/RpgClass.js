@@ -1,4 +1,5 @@
 import React from 'react'
+import './RpgClass.css'
 import artificer from '../../assets/icons/artificer.jpeg'
 import barbarian from '../../assets/icons/barbarian.jpeg'
 import bard from '../../assets/icons/bard.jpeg'
@@ -48,7 +49,7 @@ export default function RpgClass({rpgClass}) {
   }
   
   return (
-    <div className="sheet__item--class">
+    <div className="sheet__item--rpg-class">
     Class: <img className="sheet__item--icon" src={findIcon(rpgClass)} alt="" /> {rpgClass}
     </div>
   )
