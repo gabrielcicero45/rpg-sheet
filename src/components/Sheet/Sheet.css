@@ -18,5 +18,15 @@
 .sheet__item{
   text-align: start;
   padding: 10px;
-  color: #000;
+}
+
+.sheet__item--class{
+  text-align: center;
+  padding: 10px;
+}
+
+.sheet__item--icon{
+  display: flex;
+  border-radius: 8px;
+  margin: 8px;
 }
