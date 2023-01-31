@@ -11,7 +11,7 @@
   height: 300px;
   position: absolute;
   top:30vh;
-  left: 10vw;
+  left: 8vw;
 }
 
 .img__axe--right{
@@ -19,5 +19,5 @@
   transform: rotateY(180deg);
   position: absolute;
   top: 30vh;
-  right: 10vw;
+  right: 8vw;
 }

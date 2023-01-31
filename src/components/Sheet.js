@@ -34,7 +34,7 @@ export default function Sheet({player}) {
         <LevelAndXp level={calculateLevel(player.xp)} xp={player.xp}/>
       </div>
     </div>
-    {player.health<0 && <h1>You are Dead !</h1>}
+    {player.health<=0 && <h1>You are Dead !</h1>}
     </>
   )
 }
