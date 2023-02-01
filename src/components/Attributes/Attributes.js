@@ -1,15 +1,31 @@
-import React from 'react'
+import React from "react";
 
-export default function Attributes({attributes}) {
-  const {strength,dexterity,agility,intelligency,wisdom,charisma} = attributes
+export default function Attributes({ attributes }) {
+  const { strength, dexterity, agility, intelligency, wisdom, charisma } =
+    attributes;
   return (
-    <>
-      <div className="sheet__item">Strength: {strength}</div>
-      <div className="sheet__item">Dexterity: {dexterity}</div>
-      <div className="sheet__item">Agility: {agility}</div>
-      <div className="sheet__item">Intelligency: {intelligency}</div>
-      <div className="sheet__item">Wisdom: {wisdom}</div>
-      <div className="sheet__item">Charisma: {charisma}</div>
-    </>
-  )
+    <table className="sheet__item">
+      <tr>
+        <th className="table__title">Attributes</th>
+      </tr>
+      <tr>
+        <td>Strength: {strength}</td>
+      </tr>
+      <tr>
+        <td>Dexterity: {dexterity}</td>
+      </tr>
+      <tr>
+        <td>Agility: {agility}</td>
+      </tr>
+      <tr>
+        <td>Intelligency: {intelligency}</td>
+      </tr>
+      <tr>
+        <td>Wisdom: {wisdom}</td>
+      </tr>
+      <tr>
+        <td>Charisma: {charisma}</td>
+      </tr>
+    </table>
+  );
 }

@@ -16,7 +16,6 @@ import wizard from '../../assets/icons/wizard.jpeg'
 
 export default function RpgClass({rpgClass}) {
   const findIcon = (rpgClass)=>{
-    console.log(rpgClass)
     switch (rpgClass){
       case 'artificer':
         return artificer;
