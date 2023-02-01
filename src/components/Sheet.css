@@ -1,0 +1,22 @@
+.sheet__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.sheet__column{
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px ;
+  margin: auto 24px;
+  background-color: beige;
+  border-radius: 16px;
+}
+
+.sheet__item{
+  text-align: start;
+  padding: 10px;
+  color: #000;
+}
