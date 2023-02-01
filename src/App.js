@@ -3,32 +3,6 @@ import Sheet from "./components/Sheet/Sheet";
 import axe from "./assets/axe.png";
 
 function App() {
-  const inventory = {
-    map: { weight: 0.5, type: 'item', description: 'map of the world' },
-    wooden_staff: { weight: 2, type: 'weapon', description: 'staff made of maple wood' },
-    battle_axe: { weight: 10, type: 'weapon', description: 'steel axe made for cutting through armor' },
-    health_potion: { weight: 0.1, type: 'item', description: 'Recover 10 health points' },
-    leather_armor: { weight: 2, type: 'armor', description: 'light and flexible armor' },
-    mage_robes: { weight: 1.5, type: 'armor', description: 'map of the world' },
-    magic_wand: { weight: 1, type: 'weapon', description: 'used to make magic! avada kedrava' },
-    food_rations: { weight: 0.1, type: 'item', description: 'feed yourself!' },
-    compound_bow: { weight: 4, type: 'weapon', description: 'precise bow to shoot far away targets' },
-    great_bow: { weight: 2, type: 'weapon', description: 'bow common used for hunting' },
-    halberd: { weight: 5, type: 'weapon', description: 'the most efficient weapon' },
-    plate_armor: { weight: 10, type: 'armor', description: 'full body heavy armor' },
-    short_sword: { weight: 3, type: 'weapon', description: 'a soldier always needs a shortsword' },
-    dagger: { weight: 1, type: 'weapon', description: 'the weapon of the rogues' },
-    wooden_club: { weight: 2.5, type: 'weapon', description: 'this will bonk your enemies' },
-    book_collection: { weight: 2, type: 'item', description: 'bring knowledge with you' },
-    mana_potion: { weight: 0.1, type: 'item', description: 'Recover 5 mana points' },
-    torch: { weight: 0.5, type: 'item', description: 'ligthen your path' },
-    rope: { weight: 0.5, type: 'item', description: 'you always need one' },
-    climbing_gear: { weight: 1, type: 'item', description: 'for when you cant climb on your own' },
-    spell_book: { weight: 4, type: 'item', description: 'this combines very well witht he magic wand' },
-    alchemist_gear: { weight: 4, type: 'item', description: 'how to craft potions 101' },
-    breastplate: { weight: 6, type: 'armor', description: 'a nice armor for your chest' },
-    enchanted_necklace: { weight: 2, type: 'item', description: 'they say its enchanted but the effect its unkown' },
-  }
   const player = {
     name: "Cicero Gabriel",
     rpgClass: "bard",

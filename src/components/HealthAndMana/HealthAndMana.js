@@ -10,16 +10,16 @@ export default function HealthAndMana({ health, mana, level }) {
     <>
       <div className="sheet__item">
         Health: {health > maxHealth ? maxHealth : health}/{maxHealth}
-        <div class="bar">
+        <div className="bar">
           <div
-            class="health-bar"
+            className="health-bar"
             style={{ width: `${(health / maxHealth) * 100}%` }}
           ></div>
         </div>
         Mana: {mana > maxMana ? maxMana : mana}/{maxMana}
-        <div class="bar">
+        <div className="bar">
           <div
-            class="mana-bar"
+            className="mana-bar"
             style={{ width: `${(mana / maxMana) * 100}%` }}
           ></div>
         </div>
