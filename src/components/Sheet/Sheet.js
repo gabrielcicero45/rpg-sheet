@@ -9,18 +9,9 @@ import "./Sheet.css";
 import Inventory from "../Inventory/Inventory";
 import AbilitiesList from "../AbilitiesList/AbilitiesList";
 export default function Sheet({ player }) {
-  const { name, health, mana, xp, attributes, rpgClass, abilities, inventory } =
+  const { name, health, mana, level, xp, attributes, rpgClass, abilities, inventory } =
     player;
-  const calculateLevel = (xp) => {
-    if (xp >= 0 && xp < 300) return 1;
-    else if (xp < 900) return 2;
-    else if (xp < 2700) return 3;
-    else if (xp < 6500) return 4;
-    else if (xp < 14000) return 5;
-    else if (xp < 23000) return 6;
-    else if (xp < 34000) return 7;
-  };
-
+  
   return (
     <>
       <div className="sheet__container">
@@ -30,9 +21,9 @@ export default function Sheet({ player }) {
           <HealthAndMana
             health={health}
             mana={mana}
-            level={calculateLevel(xp)}
+            level={level}
           />
-          <LevelAndXp level={calculateLevel(xp)} xp={xp} />
+          <LevelAndXp level={level} xp={xp} />
         </div>
       </div>
       {health <= 0 && (

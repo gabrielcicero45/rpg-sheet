@@ -1,25 +1,52 @@
 .App {
   text-align: center;
-  padding: 10vw;
+  padding: 3vw;
   background: rgb(2,0,36);
   background: radial-gradient(circle, rgba(0,32,36,0.7931547619047619) 20%, rgba(0,0,0,0.47102591036414565) 100%);
   position: relative;
   z-index: 2;
+  
 }
 
 .img__axe--left{
-  height: 1000px;
+  height: 800px;
   position: absolute;
-  top:30vh;
+  top:10vh;
   left: 0;
   z-index: -1;
+  animation-name: flipLeftAxe;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in-out;
 }
 
 .img__axe--right{
-  height: 1000px;
-  transform: rotateY(180deg);
+  height: 800px;
+  transform: rotateY(180deg) rotateZ(0deg);
   position: absolute;
-  top: 30vh;
+  top: 10vh;
   right: 0;
   z-index: -1;
+  animation-name: flipRightAxe;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in-out;
+  }
+
+@keyframes flipRightAxe {
+  0%   {transform: rotateY(180deg) rotateZ(0deg);}
+  10%  {transform: rotateY(180deg) rotateZ(10deg);}
+  25%  {transform: rotateY(180deg) rotateZ(-40deg);}
+  50%  {transform: rotateY(180deg) rotateZ(-30deg);}
+  75%  {transform: rotateY(180deg) rotateZ(-10deg);}
+  100% {transform: rotateY(180deg) rotateZ(0deg);}
+}
+
+@keyframes flipLeftAxe {
+  0%   {transform: rotateZ(0deg);}
+  10%  {transform: rotateZ(10deg);}
+  25%  {transform: rotateZ(-40deg);}
+  50%  {transform: rotateZ(-30deg);}
+  75%  {transform: rotateZ(-10deg);}
+  100% {transform: rotateZ(0deg);}
 }
