@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Attributes from "../Attributes/Attributes";
 import RpgClass from "../RpgClass/RpgClass";
 import HealthAndMana from "../HealthAndMana/HealthAndMana";
@@ -9,8 +9,13 @@ import "./Sheet.css";
 import Inventory from "../Inventory/Inventory";
 import AbilitiesList from "../AbilitiesList/AbilitiesList";
 export default function Sheet({ player }) {
-  const { name, health, mana, level, xp, attributes, rpgClass, abilities, inventory } =
+  const { name, health,mana, xp, attributes, rpgClass, abilities, inventory } =
     player;
+  
+  const [level,setLevel] = useState(player.level);
+
+
+  const updateLevel = (level) =>{ setLevel(level)}
   
   return (
     <>
@@ -23,7 +28,7 @@ export default function Sheet({ player }) {
             mana={mana}
             level={level}
           />
-          <LevelAndXp level={level} xp={xp} />
+          <LevelAndXp lvl={level} xp={xp} updateLevel={updateLevel} />
         </div>
       </div>
       {health <= 0 && (
