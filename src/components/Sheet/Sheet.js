@@ -9,7 +9,7 @@ import "./Sheet.css";
 import Inventory from "../Inventory/Inventory";
 import AbilitiesList from "../AbilitiesList/AbilitiesList";
 export default function Sheet({ player }) {
-  const { name, surmane, health, mana, level, xp, attributes, rpgClass, abilities, inventory } =
+  const { name, surname, health, mana, level, xp, attributes, rpgClass, abilities, inventory } =
     player;
   
   return (
