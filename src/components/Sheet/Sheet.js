@@ -17,7 +17,7 @@ export default function Sheet({ player }) {
       <div className="sheet__container">
         <div className="sheet__column">
           <RpgClass rpgClass={rpgClass} />
-          <Name name={name} surname={surmane} />
+          <Name name={name} surname={surname} />
           <HealthAndMana
             health={health}
             mana={mana}
