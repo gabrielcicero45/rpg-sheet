@@ -1,10 +1,10 @@
 import React from "react";
 import InventoryItem from "../InventoryItem/InventoryItem";
 export default function Inventory({ inventory, strength }) {
-  let totalWeight = 0;
-  inventory.forEach((item) => {
-    totalWeight += Object.values(item)[0].weight * item.amount;
-  });
+  const totalWeight = inventory.reduce((accumulator, currentValue) => {
+    return accumulator + Object.values(currentValue)[0].weight * currentValue.amount;
+  }, 0);
+  const characterMaxWeight = strength * 2
   return (
     <table>
       <thead>
@@ -34,7 +34,7 @@ export default function Inventory({ inventory, strength }) {
           <td colSpan={2}></td>
           <td>Weight Status:</td>
           <td colSpan={2}>
-            {totalWeight > strength * 2 ? "Overweight" : "Ok"}
+            {totalWeight > characterMaxWeight  ? "Overweight" : "Ok"}
           </td>
         </tr>
       </tbody>

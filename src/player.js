@@ -1,5 +1,6 @@
 const player = {
   name: "Cicero Gabriel",
+  surname: "Medeiros",
   rpgClass: "bard",
   health: 20,
   mana: 50,

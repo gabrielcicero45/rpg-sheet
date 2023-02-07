@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function Name({ playerName }) {
-  const name = playerName.split(" ")[0];
-  const surname = playerName.split(" ")[1];
+export default function Name({ name, surname }) {
   return (
     <div className="sheet__item">
       <p>Name: {name}</p>
