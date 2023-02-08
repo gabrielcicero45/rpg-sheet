@@ -1,25 +1,19 @@
-import React from 'react'
-import './HealthAndMana.css'
+import React from "react";
+import "./HealthAndMana.css";
 
-export default function HealthAndMana({health,mana,level}) {
-  const baseHealth = 90
-  const baseMana = 90
-  const maxHealth = baseHealth + (level*10)
-  const maxMana = baseMana + (level*10)
+export default function HealthAndMana({ health, mana }) {
   return (
     <>
-    <div className="sheet__item">
-      Health: {health>maxHealth ? maxHealth:health}/{maxHealth}
-      <div class="bar">
-        <div class="health-bar" style={{width: `${health/maxHealth * 100}%`}}></div>
+      <div className="sheet__item">
+        Health: {health}
+        <div className="bar">
+          <div className="health-bar" style={{ width: `100%` }}></div>
+        </div>
+        Mana: {mana}
+        <div className="bar">
+          <div className="mana-bar" style={{ width: `100%` }}></div>
+        </div>
       </div>
-    </div>
-    <div className="sheet__item">
-      Mana: {mana>maxMana ? maxMana:mana}/{maxMana}
-      <div class="bar">
-        <div class="mana-bar" style={{width: `${mana/maxMana * 100}%`}}></div>
-      </div>
-    </div>
     </>
-  )
+  );
 }

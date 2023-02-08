@@ -1,24 +1,9 @@
 import "./App.css";
 import Sheet from "./components/Sheet/Sheet";
 import axe from "./assets/axe.png";
+import player from './player'
 
 function App() {
-  const player = {
-    name: "Cicero Gabriel",
-    health: 12,
-    mana: 50,
-    xp: 0,
-    attributes: {
-      strength: 50,
-      wisdom: 50, 
-      intelligency: 50, 
-      agility: 50, 
-      charisma: 50, 
-      dexterity: 50
-    },
-    rpgClass: "bard",
-  };
-
   return (
     <div className="App">
       <img className="img__axe--left" src={axe} alt="Axe" />
