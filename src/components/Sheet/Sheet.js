@@ -5,7 +5,9 @@ import LevelAndXp from "../LevelAndXp/LevelAndXp";
 import Name from "../Name/Name";
 import "./Sheet.css";
 
-export default function Sheet({ name, surname, health, mana, level, xp, rpgClass }) {
+export default function Sheet({player}) {
+  const { name, surname, health, mana, level, xp, rpgClass } = player
+  const armour = health + (level * 2) + (xp + 1)
   return (
     <>
       <h1>Rpg Sheet</h1>
@@ -18,15 +20,9 @@ export default function Sheet({ name, surname, health, mana, level, xp, rpgClass
             mana={mana}
           />
           <LevelAndXp level={level} xp={xp} />
+          <div>Armour: {armour ? armour : ""}</div>
         </div>
       </div>
-      {health <= 0 && (
-        <div className="sheet__container">
-          <div className="sheet__column">
-            <h1>You are Dead !</h1>
-          </div>
-        </div>
-      )}
     </>
   );
 }

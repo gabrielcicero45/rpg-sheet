@@ -1,12 +1,21 @@
 import { useState } from 'react';
 
 export const useInput = (initialValue) => {
-  const [value, setValue] = useState(initialValue);
-
+  const [value, setValue] = useState(()=>{
+    const storedValue = JSON.parse(window.localStorage.getItem("player"));
+    return storedValue || initialValue
+  });
+  
   const handleInputChange = (event) => {
-    console.log(event.target.value)
-    setValue(event.target.value);
+    console.log({
+      ...value,
+    [event.target.name]: event.target.value
+    })
+    setValue({
+      ...value,
+    [event.target.name]: event.target.value
+    });
   }
 
-  return { value, handleInputChange };
+  return { value, handleInputChange};
 }
