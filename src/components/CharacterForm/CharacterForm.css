@@ -12,6 +12,15 @@
   border-radius: 16px;
 }
 
+.reset-dialog__container{
+  font-size: 24px;
+  text-align: center;
+  padding: 24px;
+  margin: 24px;
+  background-color: beige;
+  border-radius: 16px;
+}
+
 .break-column {
  flex-basis: 100%;
  width: 0;
@@ -30,8 +39,7 @@
 
 input[type="email"],
 input[type="text"],
-input[type="number"],
-textarea {
+input[type="number"]{
   appearance: none;
   width: 25vw;
   border:  1px solid  rgba(128, 128, 128, 0.26);
@@ -44,6 +52,13 @@ textarea {
   padding: 0.85em 0.75em 0.75em 0.75em;
 }
 
+input[type="submit"],input[type="reset"],button{
+  color: white;
+  background-color: rgba(10,10,0,0.47);
+  padding: 8px;
+  border-radius: 16px;
+  margin: 8px;
+}
 input:hover {
   border-color:  rgba(34, 33, 33, 0.945);
 }

@@ -6,8 +6,8 @@ import Name from "../Name/Name";
 import "./Sheet.css";
 
 export default function Sheet({player}) {
-  const { name, surname, health, mana, level, xp, rpgClass } = player
-  const armour = health + (level * 2) + (xp + 1)
+  const { name, surname, health, maxHealth, mana, maxMana, armour, level, xp, rpgClass } = player
+
   return (
     <>
       <h1>Rpg Sheet</h1>
@@ -18,9 +18,17 @@ export default function Sheet({player}) {
           <HealthAndMana
             health={health}
             mana={mana}
+            maxHealth = {maxHealth}
+            maxMana = {maxMana}
           />
           <LevelAndXp level={level} xp={xp} />
-          <div>Armour: {armour ? armour : ""}</div>
+          <div>Armour: {armour}</div>
+        </div>
+        <div className="sheet_column">
+          <button>-1 Health</button>
+          <button>+1 Health</button>
+          <button>-1 Mana</button>
+          <button>+1 Mana</button>
         </div>
       </div>
     </>

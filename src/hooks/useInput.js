@@ -5,7 +5,7 @@ export const useInput = (initialValue) => {
     const storedValue = JSON.parse(window.localStorage.getItem("player"));
     return storedValue || initialValue
   });
-  
+
   const handleInputChange = (event) => {
     console.log({
       ...value,
@@ -17,5 +17,5 @@ export const useInput = (initialValue) => {
     });
   }
 
-  return { value, handleInputChange};
+  return { value, setValue, handleInputChange};
 }
