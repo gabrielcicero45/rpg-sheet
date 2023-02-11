@@ -9,16 +9,8 @@ export const useLocalStorage = (key, initialValue) => {
   };
 
   const handleReset = () => {
-    setValue({
-      name: "",
-      surname: "",
-      level: 1,
-      xp: 0,
-      health: 0,
-      mana: 0,
-      rpgClass: "",
-    });
-    localStorage.setItem(key, JSON.stringify(value));
+    setValue(initialValue);
+    localStorage.removeItem(key);
   };
 
   return { value, handleSave, handleReset };

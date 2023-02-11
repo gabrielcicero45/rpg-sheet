@@ -1,11 +1,8 @@
 import { useState } from 'react';
 
-export const useInput = (initialValue) => {
-  const [value, setValue] = useState(()=>{
-    const storedValue = JSON.parse(window.localStorage.getItem("player"));
-    return storedValue || initialValue
-  });
-
+export const useForm = (initialValue) => {
+  const [value, setValue] = useState(initialValue);
+  
   const handleInputChange = (event) => {
     console.log({
       ...value,
