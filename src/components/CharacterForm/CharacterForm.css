@@ -30,15 +30,24 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  
 }
+
 .rpg-class__column {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   margin: 10px;
+  height: 130px;
+  width: 50vw;
+  flex-wrap: wrap;
 }
 
-input[type="text"],
-input[type="number"]{
+.rpg-class__radio {
+  text-align: left;
+}
+
+.form__input{
   appearance: none;
   width: 25vw;
   border:  1px solid  rgba(128, 128, 128, 0.26);
@@ -51,18 +60,19 @@ input[type="number"]{
   padding: 0.85em 0.75em 0.75em 0.75em;
 }
 
-input[type="submit"],input[type="reset"],button{
+.form__button{
   color: white;
   background-color: rgba(10,10,0,0.47);
   padding: 8px;
   border-radius: 16px;
   margin: 8px;
 }
-input:hover {
+
+.form__input:hover {
   border-color:  rgba(34, 33, 33, 0.945);
 }
 
-input:focus {
+.form__input:focus {
   border-color:  blue;
   outline:  1px solid  blue;
 }

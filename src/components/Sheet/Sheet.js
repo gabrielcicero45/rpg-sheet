@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import RpgClass from "../RpgClass/RpgClass";
 import HealthAndMana from "../HealthAndMana/HealthAndMana";
 import LevelAndXp from "../LevelAndXp/LevelAndXp";
@@ -6,8 +6,24 @@ import Name from "../Name/Name";
 import "./Sheet.css";
 
 export default function Sheet({player}) {
-  const { name, surname, health, maxHealth, mana, maxMana, armour, level, xp, rpgClass } = player
+  const { name, surname, level, xp, rpgClass } = player
+  const maxHealth = useMemo(()=>{return  parseInt(level)*10}, [level] )
+  const maxMana = useMemo(()=>{return ( parseInt(level)*2) + parseInt(xp)}, [level,xp])
+  const armour = useMemo(
+    () => {return (maxHealth  + parseInt(level)* 2 + parseInt(xp)+ 1)|| 0},
+    [maxHealth,level,xp]
+  );
+  const [health, setHealth] = useState(maxHealth)
+  const [mana, setMana] = useState(maxMana)
+  
+  useEffect(() => {
+    setHealth(maxHealth)
+  }, [maxHealth])
 
+  useEffect(() => {
+    setMana(maxMana)
+  }, [maxMana])
+  
   return (
     <>
       <h1>Rpg Sheet</h1>
@@ -25,10 +41,10 @@ export default function Sheet({player}) {
           <div>Armour: {armour}</div>
         </div>
         <div className="sheet_column">
-          <button>-1 Health</button>
-          <button>+1 Health</button>
-          <button>-1 Mana</button>
-          <button>+1 Mana</button>
+          <button onClick={()=>{setHealth(health =>  health>maxHealth ? health+=1 : maxHealth)}}>+1 Health</button>
+          <button onClick={()=>{setHealth(health => health>0 ? health-=1 : 0)}}>-1 Health</button>
+          <button onClick={()=>{setMana(mana =>  mana>0 ? mana-=1 : 0)}}>-1 Mana</button>
+          <button onClick={()=>{setMana(mana => mana>maxMana ? mana+=1 : maxMana)}}>+1 Mana</button>
         </div>
       </div>
     </>

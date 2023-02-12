@@ -8,9 +8,7 @@ export default function CharacterForm({
   handleSubmit,
 }) {
   const [resetDialog, setResetDialog] = useState(false);
-  const { name, surname, level, xp, health, mana, rpgClass } = player;
-  const maxHealth = level * 10;
-  const maxMana = level * 2 + xp;
+  const { name, surname, level, xp,} = player;
   const rpgClasses = [
     "artificer",
     "barbarian",
@@ -43,81 +41,65 @@ export default function CharacterForm({
             type="text"
             name="name"
             id="name"
+            className="form__input"
             placeholder="Name"
             value={name}
             onChange={handlePlayerChange}
           />
-          <label hmtlFor="surname">Surname:</label>
+        </div>
+        <div>
+        <label hmtlFor="surname">Surname:</label>
           <input
             type="text"
             name="surname"
             id="surname"
+            className="form__input"
             placeholder="Surname"
             value={surname}
             onChange={handlePlayerChange}
           />
         </div>
+        
         <div>
-          <label hmtlFor="level">Level:</label>
+        <label hmtlFor="level">Level:</label>
           <input
             type="number"
             name="level"
             id="level"
+            className="form__input"
             value={level}
             onChange={handlePlayerChange}
             min={1}
           />
+        </div>
 
-          <label hmtlFor="xp">XP:</label>
+        <div>
+        <label hmtlFor="xp">XP:</label>
           <input
             type="number"
             name="xp"
             id="xp"
+            className="form__input"
             value={xp}
             onChange={handlePlayerChange}
             min={0}
           />
         </div>
 
-        <div>
-          <label hmtlFor="health">Health:</label>
-          <input
-            type="number"
-            name="health"
-            id="health"
-            value={health}
-            onChange={handlePlayerChange}
-            min={0}
-            max={maxHealth || 0}
-          />
-
-          <label hmtlFor="mana">Mana:</label>
-          <input
-            type="number"
-            name="mana"
-            id="mana"
-            value={mana}
-            onChange={handlePlayerChange}
-            min={0}
-            max={maxMana || 0}
-          />
-        </div>
 
         <div className="rpg-class__container">
           <span>Classes:</span>
           <span className="break-column"></span>
-          <div className="rpg-class__column">
+          <div className="rpg-class__column" onChange={handlePlayerChange} >
             {rpgClasses.map((rpgClass) => {
               return (
-                  <label htmlfor={rpgClass}>
+                  <label htmlfor={rpgClass} className="rpg-class__radio">
                   <input
                     type="radio"
                     id={rpgClass}
                     key={rpgClass}
                     name="rpgClass"
                     value={rpgClass}
-                    checked={rpgClass}
-                    onChange={handlePlayerChange}
                   />
                   {rpgClass}
                   </label>
@@ -126,8 +108,8 @@ export default function CharacterForm({
           </div>
         </div>
         <div>
-          <input type="submit" value="Submit" />
-          <input type="reset" value="Reset" />
+          <button className="form__button" type="submit">Submit</button>
+          <button  className="form__button" type="reset">Reset</button>
         </div>
       </form>
       {resetDialog && (
