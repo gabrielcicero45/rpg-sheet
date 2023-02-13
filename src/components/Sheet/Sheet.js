@@ -15,7 +15,7 @@ export default function Sheet({player}) {
   );
   const [health, setHealth] = useState(maxHealth)
   const [mana, setMana] = useState(maxMana)
-  
+
   useEffect(() => {
     setHealth(maxHealth)
   }, [maxHealth])
@@ -41,10 +41,10 @@ export default function Sheet({player}) {
           <div>Armour: {armour}</div>
         </div>
         <div className="sheet_column">
-          <button onClick={()=>{setHealth(health =>  health>maxHealth ? health+=1 : maxHealth)}}>+1 Health</button>
-          <button onClick={()=>{setHealth(health => health>0 ? health-=1 : 0)}}>-1 Health</button>
-          <button onClick={()=>{setMana(mana =>  mana>0 ? mana-=1 : 0)}}>-1 Mana</button>
-          <button onClick={()=>{setMana(mana => mana>maxMana ? mana+=1 : maxMana)}}>+1 Mana</button>
+          <button className="form__button" onClick={()=>{setHealth(health =>  health<maxHealth ? health+=1 : maxHealth)}}>+1 Health</button>
+          <button  className="form__button" onClick={()=>{setHealth(health => health>0 ? health-=1 : 0)}}>-1 Health</button>
+          <button  className="form__button" onClick={()=>{setMana(mana =>  mana>0 ? mana-=1 : 0)}}>-1 Mana</button>
+          <button className="form__button" onClick={()=>{setMana(mana => mana>maxMana ? mana+=1 : maxMana)}}>+1 Mana</button>
         </div>
       </div>
     </>

@@ -9,6 +9,7 @@ export default function CharacterForm({
 }) {
   const [resetDialog, setResetDialog] = useState(false);
   const { name, surname, level, xp,} = player;
+  const [rpgClass, setRpgClass] = useState('')
   const rpgClasses = [
     "artificer",
     "barbarian",
@@ -29,7 +30,7 @@ export default function CharacterForm({
     <div>
       <h1>Character Form</h1>
       <form
-        className="form__container"
+        className={`form__container ${rpgClass}`}
         onSubmit={handleSubmit}
         onReset={() => {
           setResetDialog(true);
@@ -43,6 +44,7 @@ export default function CharacterForm({
             id="name"
             className="form__input"
             placeholder="Name"
+            required={true}
             value={name}
             onChange={handlePlayerChange}
           />
@@ -55,6 +57,7 @@ export default function CharacterForm({
             id="surname"
             className="form__input"
             placeholder="Surname"
+            required={true}
             value={surname}
             onChange={handlePlayerChange}
           />
@@ -90,7 +93,7 @@ export default function CharacterForm({
         <div className="rpg-class__container">
           <span>Classes:</span>
           <span className="break-column"></span>
-          <div className="rpg-class__column" onChange={handlePlayerChange} >
+          <div className="rpg-class__column" onChange={(event) => {handlePlayerChange(event); setRpgClass(event.target.value)}} >
             {rpgClasses.map((rpgClass) => {
               return (
                   <label htmlfor={rpgClass} className="rpg-class__radio">
@@ -99,6 +102,7 @@ export default function CharacterForm({
                     id={rpgClass}
                     key={rpgClass}
                     name="rpgClass"
+                    required={true}
                     value={rpgClass}
                   />
                   {rpgClass}
@@ -117,6 +121,7 @@ export default function CharacterForm({
           <p>Are you sure you want to reset the form and saved data?</p>
 
           <button
+            className="form__button"
             onClick={() => {
               handleReset();
               setResetDialog(false);
@@ -125,6 +130,7 @@ export default function CharacterForm({
             Confirm
           </button>
           <button
+            className="form__button"
             onClick={() => {
               setResetDialog(false);
             }}

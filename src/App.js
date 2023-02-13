@@ -41,7 +41,7 @@ function App() {
         handleSubmit={handleSubmit}
       />
 
-      {playerStored.value && <Sheet player={playerStored.value} /> }
+      {playerStored.value.rpgClass && <Sheet player={playerStored.value} /> }
       <img className="img__axe--left" src={axe} alt="Axe" />
       <img className="img__axe--right" src={axe} alt="Axe" />
     </div>
