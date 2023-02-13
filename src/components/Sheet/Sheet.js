@@ -44,7 +44,7 @@ export default function Sheet({player}) {
           <button className="form__button" onClick={()=>{setHealth(health =>  health<maxHealth ? health+=1 : maxHealth)}}>+1 Health</button>
           <button  className="form__button" onClick={()=>{setHealth(health => health>0 ? health-=1 : 0)}}>-1 Health</button>
           <button  className="form__button" onClick={()=>{setMana(mana =>  mana>0 ? mana-=1 : 0)}}>-1 Mana</button>
-          <button className="form__button" onClick={()=>{setMana(mana => mana>maxMana ? mana+=1 : maxMana)}}>+1 Mana</button>
+          <button className="form__button" onClick={()=>{setMana(mana => mana<maxMana ? mana+=1 : maxMana)}}>+1 Mana</button>
         </div>
       </div>
     </>
